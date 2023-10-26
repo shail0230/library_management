@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+  <title> Dreamwork Library</title>
+  body {
+  color: #fff;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo {
+  flex-grow: 1;
+  text-align: center;
+}
+
+header .logo a {
+  color: #fff;
+  text-decoration: none;
+}
+
+header .navigation {
+  display: flex;
+  align-items: center;
+}
+
+header .navigation a {
+  margin-right: 10px;
+  color: #fff;
+  text-decoration: none;
+}
+
+header .dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+header .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+header .dropdown:hover .dropdown-content {
+  display: block;
+}
+
+header .dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+header nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+
+footer {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  text-align: center;
+}
+
+</style>
+</head>
+<body>
+  <header>
+    <div class="navigation">
+       <div class="dropdown">
+        <a href="#">Dashboard</a>
+        <div class="dropdown-content">
+          <a href="/total_books">Total Books</a>
+          <a href="/total_members">Total Members</a>
+          <a href="/">Recent Transaction</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="#">Books</a>
+        <div class="dropdown-content">
+          <a href="/get_book">List of Books</a>
+          <a href="/">Search Books</a>
+          <a href="/new_book">Add Books</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="#">Members</a>
+        <div class="dropdown-content">
+          <a href="/get_member">List of Members</a>
+          <a href="/">Search Members</a>
+          <a href="/new_member">Add Members</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="#">Transactions</a>
+        <div class="dropdown-content">
+          <a href="/">Transactions Logs</a>
+          <a href="/">Filter</a>
+          <a href="/">Add Transaction</a>
+        </div>
+      </div>
+    </div>
+    <div class="logo">
+      <h1><a href="#">Dreamwork Library</a></h1>
+    </div>
+    <nav>
+      <a href="/contact">Contact</a>
+      <a href="/about">About Us</a>
+    </nav>
+  </header>
+
+  <div class="slideshow-container">
+    <div class="slide">
+      <img src="{{ url_for('static' , filename='3.jpg') }}" alt="Slide 3">
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 26/10/2023 shailesh yadav .</p>
+  </footer>
+</body>
+</html>

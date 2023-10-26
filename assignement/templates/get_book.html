@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Books</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            padding: 12px;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        li h3 {
+            margin: 0;
+            color: #333;
+        }
+
+        li p {
+            margin: 8px 0 0;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Library Books</h1>
+
+    <ul id="bookList">
+        
+    </ul>
+
+    <script>
+        fetch('/get_book')
+            .then(response => response.json())
+            .then(data => {
+                // Populate the list with book data
+                const bookList = document.getElementById('bookList');
+                data.forEach(book => {
+                    const listItem = document.createElement('li');
+                    listItem.innerHTML = `
+                        <h3>${book.title}</h3>
+                        <p>Author: ${book.author}</p>
+                        <p>Language: ${book.language}</p>
+                    `;
+                    bookList.appendChild(listItem);
+                });
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    </script>
+</body>
+</html>

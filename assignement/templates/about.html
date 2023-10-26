@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url("{{ url_for('static', filename='b2.jpg') }}");
+            background-size: cover;
+            background-position: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+
+        .highlight {
+            font-weight: bold;
+        }
+
+        .quote {
+            border-left: 3px solid #333;
+            padding-left: 10px;
+            margin: 20px 0;
+        }
+
+        .quote p {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1><a href="#">ABOUT</a></h1>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="{{ url_for('index') }}">Home</a></li>
+                   
+                </ul>
+            </nav>
+        </header>
+        <h2> </h2>
+
+        <p><span class="highlight">"Hello, fellow book lovers! I'm Shailesh, the guardian of this virtual library haven. With a deep affection for the printed word and a penchant for the classics, I've crafted this digital sanctuary for book enthusiasts like you. Picture me as your friendly librarian, here to ensure every literary gem finds its rightful place. Join me in preserving the charm of the written word in our own little corner of the internet. Let's embark on a journey to bring the timeless elegance of the library to the digital age."</p>
+
+        <div class="quote">
+            <p> My love for literature and knack for technology converge in this library management web application. Join me on this journey of seamlessly organizing and accessing your literary treasures. Let's turn the page to a new chapter of efficient library management together!"</p>
+
+        
+    </div>
+</body>
+</html>

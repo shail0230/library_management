@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count Total Books</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            fetch('/total_books')
+                .then(response => response.json())
+                .then(data => {
+                    const totalCount = data.totalCount;
+                    console.log(`Total Books: ${totalCount}`);
+                })
+                .catch(error => console.error('Error fetching total book count:', error));
+        });
+    </script>
+</head>
+<body>
+    <!-- Your HTML content here -->
+</body>
+</html>
