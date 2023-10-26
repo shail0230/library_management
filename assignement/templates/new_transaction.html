@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        input, select {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Transaction Form</h1>
+        <form action="/new_transaction" method="POST">
+            <label for="member_name">Member Name:</label>
+            <input type="text" id="member_name" name="member_name" required>
+
+            <label for="book_title">Book Title:</label>
+            <input type="text" id="book_title" name="book_title" required>
+
+            <label for="transaction_type">Transaction Type:</label>
+            <select id="transaction_type" name="transaction_type" onchange="toggleDateFields()" required>
+                <option value="rent">Rent</option>
+                <option value="return">Return</option>
+            </select>
+
+            <label for="dob1" id="date_of_rent_label" style="display: none;">Date of Rent:</label>
+            <input type="date" id="dob1" name="dob1" style="display: none;"><br><br>
+
+            <label for="dob2" id="date_of_return_label" style="display: none;">Date of Return:</label>
+            <input type="date" id="dob2" name="dob2" style="display: none;"><br><br>
+
+            <button type="submit">Submit Transaction</button>
+        </form>
+    </div>
+
+    <script>
+        function toggleDateFields() {
+            console.log('toggleDateFields called');
+            var transactionType = document.getElementById('transaction_type').value;
+            var dateOfRentLabel = document.getElementById('date_of_rent_label');
+            var dateOfRentInput = document.getElementById('dob1');
+            var dateOfReturnLabel = document.getElementById('date_of_return_label');
+            var dateOfReturnInput = document.getElementById('dob2');
+
+            if (transactionType === 'rent') {
+                dateOfRentLabel.style.display = 'block';
+                dateOfRentInput.style.display = 'block';
+                dateOfReturnLabel.style.display = 'none';
+                dateOfReturnInput.style.display = 'none';
+            } else if (transactionType === 'return') {
+                dateOfRentLabel.style.display = 'none';
+                dateOfRentInput.style.display = 'none';
+                dateOfReturnLabel.style.display = 'block';
+                dateOfReturnInput.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -6,54 +6,55 @@
     <title>Add New Book</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            background-image: url("{{ url_for('static', filename='bg4.jpg') }}");
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        
-        form {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            max-width: 400px;
-            width: 100%;
-        }
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    background-image: url("{{ url_for('static', filename='bg4.jpg') }}");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
 
-        label {
-            display: block;
-            margin-bottom: 8px;
-        }
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
 
-        input, select {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 16px;
-            box-sizing: border-box;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
+label {
+    margin-bottom: 8px;
+}
 
-        button {
-            background-color: #4caf50;
-            color: #fff;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
+input, select {
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
 
-        button:hover {
-            background-color: #45a049;
-        }
+button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
     </style>
 </head>
 <body>
@@ -64,9 +65,6 @@
 
         <label for="authors">Authors:</label>
         <input type="text" id="authors" name="author" required>
-
-        <label for="rating">Rating:</label>
-        <input type="number" id="rating" name="rating" min="0" max="10" step="0.1" required>
 
         <label for="language">Language:</label>
         <input type="text" id="language" name="language" required>
@@ -79,6 +77,12 @@
 
         <label for="publisher">Publisher:</label>
         <input type="text" id="publisher" name="publisher" required>
+
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" required>
+
+        <label for="genre">Genre:</label>
+        <input type="text" id="genre" name="genre" required>
 
         <button type="submit">Add Book</button>
     </form>
