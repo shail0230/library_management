@@ -1,0 +1,9 @@
+python == 3.11.5
+ 
+pip intall :-
+
+flask == 3.0.0
+flask-mongoengine == 1.0.0
+flask-pyMongo == 2.3.0
+mongoengine == 0.27.0
+pymongo == 4.5.0
